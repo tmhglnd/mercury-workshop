@@ -1,6 +1,6 @@
 # Mercury Live Coding Workshop
 
-A repo with references, cheatsheet, assignments, and more helpful when giving a workshop
+A repository with references, cheatsheet, exercises and more helpful when you want to give a Mercury workshop/course.
 
 ## 📖 Workshop Files
 
@@ -13,7 +13,7 @@ A repo with references, cheatsheet, assignments, and more helpful when giving a 
 
 ## 📟 Live Coding Platform
 
-- [**Mercury Browser**](http://mercury.timohoogland.com)
+- [**Go to the Mercury Playground**](http://mercury.timohoogland.com)
 
 ## ⚡️ Interesting links
 
@@ -24,14 +24,15 @@ A repo with references, cheatsheet, assignments, and more helpful when giving a 
 
 ## 📖 Documentation
 
-- [Mercury Tutorial](https://tmhglnd.github.io/mercury/tutorial.html)
+<!-- - [Mercury Tutorial](https://tmhglnd.github.io/mercury/tutorial.html) -->
 - [Mercury Documentation](https://tmhglnd.github.io/mercury/reference.html)
+- [Sounds in Mercury](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md#sounds-in-mercury)
 
 ## 👋 About me
 
 - [Timo Hoogland](http://www.timohoogland.com)
 
-### 💻 Computer Requirements
+## 💻 Computer Requirements
 
 - Laptop (Windows 10, MacOS 10.12+, Linux)
 	- 4GB Ram and Intel i5 processor or higher recommended
