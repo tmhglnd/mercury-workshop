@@ -2,6 +2,15 @@
 
 A repo with references, cheatsheet, assignments, and more helpful when giving a workshop
 
+## 📖 Workshop Files
+
+- [CheatSheet](./docs/cheatsheet.md)
+
+- Exercises
+	- [Pop](./exercises/style-pop.md)
+	- [Hip-Hop](./exercises/style-hiphop.md)
+	- [Techno](./exercises/style-techno.md)
+
 ## 📟 Live Coding Platform
 
 - [**Mercury Browser**](http://mercury.timohoogland.com)
