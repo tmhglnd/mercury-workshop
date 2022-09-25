@@ -6,7 +6,7 @@ A repo with references, cheatsheet, assignments, and more helpful when giving a 
 
 - [**CheatSheet**](./docs/cheatsheet.md)
 
-- [**Exercises**](./exercises/README.md)
+- [**Exercises**](./exercises)
 	- [Pop](./exercises/style-pop.md)
 	- [Hip-Hop](./exercises/style-hiphop.md)
 	- [Techno](./exercises/style-techno.md)
