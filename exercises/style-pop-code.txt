@@ -1,0 +1,19 @@
+set tempo 123
+set scale minor e
+
+new sample kick_vintage time(1/2)
+new sample clap_909 time(1/2 1/4) 
+new sample snare_ac time(1/2 1/4) gain(0.9)
+new sample hat_909 time(1/8) speed(0.4) shape(1 50) gain(0.5)
+set all fx(reverb 0.3 0.7)
+
+list progression [0 7 3 10]
+list bassRhythm palin(euclid(8 3))
+list bassNotes [0 12 0 12 3 7]
+list bassNotes clone(bassNotes progression)
+new synth saw note(bassNotes -1) time(1/16) shape(1 2/8) play(bassRhythm 4) name(bass)
+    set bass fx(filter low 800 0.4) fx(drive 2)
+
+list leadNotes repeat(progression 4)
+new synth saw note(leadNotes 0) time(1/4 1/8) shape(10 1/8 10) super(0.032 3) play(1 4) name(chord)
+    set chord fx(filter low 2000 0.5) fx(reverb 0.4 1)

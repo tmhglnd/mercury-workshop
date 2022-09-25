@@ -1,0 +1,19 @@
+set tempo 80  
+set scale minor d
+
+list hatBeat [1 0.05 1 0.2]
+new sample hat_808 time(1/32) play(hatBeat 1) gain(0.7)
+
+list kickBeat [1 0 0 0.7 0 0.9 0 0.2]
+new sample kick_808 time(1/8) gain(1) play(kickBeat 1)
+new sample snare_808 time(1/2 1/4) speed(1.4)
+new sample maracas_808 time(1/2 15/16)
+
+list melody repeat(spread(4 5 0) 4)
+new synth saw note(melody 2) name(lead)
+    set lead time(1/8) slide(150) gain(0.6) play(1 2) shape(1 500)
+    set lead super(0.12 3) fx(filter low 2000 0.4) fx(reverb 0.4 2)
+    
+list bassNotes fill(0 16 2 16)
+new synth saw note(bassNotes 0) name(bass)
+    set bass time(1/8) shape(-1) fx(filter low 500 0.6) play(1 4) fx(lfo 1/8)
