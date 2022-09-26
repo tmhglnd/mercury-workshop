@@ -1,6 +1,6 @@
 # Mercury Live Coding Workshop
 
-A repository with references, cheatsheet, exercises and more helpful when you want to give a Mercury workshop/course.
+A repository with references, cheatsheet, exercises and more helpful references for when giving a Mercury workshop/course.
 
 ## 📖 Workshop Files
 
