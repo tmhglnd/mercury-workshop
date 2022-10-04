@@ -64,7 +64,90 @@ Go ahead and make the beat more interesting by playing around with different rhy
 
 ## 2. Bass & Melody
 
-Coming soon...
+### Bass
+
+For the second part we will work on a bass synthesizer creates both a bass and melodic part. The synth generates a specific type of waveform in a rhythmical pattern and has a so called envelope that starts and stops the sound over a period of time. First we will work on the bass synthesizer by adding a `new synth` of type `saw` that plays every sixteenth note `time(1/16)` a default `note(0 0)`.
+
+```java
+new synth saw note(0 0) time(1/16)
+```
+
+we can make it play a bit more staccato by adding the shape function and giving it an short attack, a hold and then a short release.
+
+```java
+new synth saw note(0 0) time(1/8) shape(1 80 1)
+```
+
+It is quite harsh in terms of color/timber. So what we can do is add a filter to the synth that removes high frequencies above a certain value. We use the `fx()` function for this and as an argument we use `filter`. The type of filter will be `low` which mains only output the low frequencies (lowpass).
+
+```java
+new synth saw note(0 0) time(1/8) shape(1 100) fx(filter low 900)
+```
+
+Now lets create a list of notes for the bass to play. We add the list as an argument to the `note()` function. This list will be the progression of the musical piece. We want to duplicate the values of the list for every note the bass plays so it fills a bar, so we will use a list function to transforms the list and repeats every note 16 times. We also make sure the part resets after `4` bars in `play()`.
+
+```java
+list progression [0 2 3 2]
+list bassNotes repeat(progression 16)
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low 900)
+```
+
+### Melody
+
+Now we will work on the melody that is played by the same synthesizer. The melody will be alternating from the bass synth in a higher register (higher notes). We start by creating a list that temporarily replaces the current `bassNotes`.
+
+```java
+list bassNotes [24 0 0 24 0 0 19 0]
+// list bassNotes repeat(progression 16)
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low 900)
+```
+
+Now we want to duplicate this pattern for the progression length by offsetting every repition by the amount of the progression. So for example in the `3` of the progression the list becomes `[27 3 3 27 3 3 22 3]`. We can do this by using the `clone()` function. This clones a list and adds a value to it as an offset.
+
+```java
+list progression [0 2 3 2]
+list bassNotes [24 0 0 24 0 0 19 13]
+list bassNotes clone(bassNotes progression)
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low 900)
+```
+
+To make the sound more interesting we can also create a list of different cutoff frequencies for the filter to modulate that over time.
+
+```java
+list cutoffs [300 700 1500]
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs)
+```
+
+If we set the scale for the whole piece we don't have to worry about generating values that are maybe not part of a musical scale. For example we can `set scale minor c`.
+
+```java
+set scale minor c
+```
+
+To finish we can adjust the synth sound more by creating a so called `super()` synth. This is a synth that plays multiple synths (voices) at the same time in unison with a little detuning creating an interesting effect. For example try:
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs) super(0.213 3)
+```
+
+This means 3 voices with a small detuning of 0.12. But instead of `(0.213 3)` you can also try other values like `(0.32 5)`. The final result should look something like this:
+
+```java
+set tempo 140
+
+list hats [hat_909 hat_909_open]
+new sample hats time(1/4 1/8) gain(0.5)
+new sample kick_909 time(1/4) play(0.9)
+new sample snare_909 time(1/2 1/4) speed(0.7) shape(1 100)
+
+new loop amen time(1) gain(0.6)
+
+list progression [0 2 3 2]
+list bassNotes [24 0 0 24 0 0 19 13]
+list bassNotes clone(bassNotes progression)
+list cutoffs [300 700 1500]
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs) super(0.213 3)
+```
 
 ## 3. More Rhythms, Lists & Effects
 

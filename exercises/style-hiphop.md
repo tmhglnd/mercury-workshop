@@ -55,7 +55,94 @@ Go ahead and make the beat more interesting by playing around with different rhy
 
 ## 2. Bass & Melody
 
-Coming soon...
+### Bass
+
+For the second part we will work on a bass synthesizer and a synthesizer that creates a melodic part. The synth generates a specific type of waveform in a rhythmical pattern and has a so called envelope that starts and stops the sound over a period of time. First we will work on the bass synthesizer by adding a `new synth` of type `saw` that plays every eight note `time(1/8)` a default `note(0 0)`.
+
+```java
+new synth saw note(0 0) time(1/8)
+```
+
+we can make it play a bit shorter by adding the shape function
+
+```java
+new synth saw note(0 0) time(1/8) shape(1 100)
+```
+
+It is quite harsh in terms of color/timber. So what we can do is add a filter to the synth that removes high frequencies above a certain value. We use the `fx()` function for this and as an argument we use `filter`. The type of filter will be `low` which mains only output the low frequencies (lowpass).
+
+```java
+new synth saw note(0 0) time(1/8) shape(1 100) fx(filter low 500)
+```
+
+Now lets create a list of notes for the bass to play. We add the list as an argument to the `note()` function. This list will be the progression of the musical piece. We want to duplicate the values of the list for every note the bass plays, so we will use a list function to transform the list and repeat every note 16 times. We also make sure the part resets after `4` bars in `play()`.
+
+```java
+list progression [0 2]
+list bassNotes repeat(progression 16)
+new synth saw note(bassNotes 0) name(bass) time(1/8) shape(1 100) fx(filter low 500)
+```
+
+### Melody
+
+Now we will work on the melody that plays together with the bass. The melody will be another synth that plays in a higher register (higher notes). First we start by creating another synth that plays every eight note but in an octave higher, together with a filter with a higher cutoff frequency. We'll add a `shape()` that plays the note a bit longer
+
+```java
+new synth saw note(0 2) time(1/8) fx(filter low 2000) shape(1 400)
+```
+
+Now we can add a melody as a list that will be played. Let's make a descending melody.
+
+```java
+list melody [3 3 3 3 2 2 2 2 0 0 0 0 0 0 0 0]
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400)
+```
+
+To make the sound more interesting we can let the notes `slide()` from one to the other (called portamento).
+
+```java
+list melody [3 3 3 3 2 2 2 2 0 0 0 0 0 0 0 0]
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400) slide(100)
+```
+
+If we set the scale for the whole piece we don't have to worry about putting in values that are maybe not part of a musical scale. For example we can `set scale minor d` and then add some random values to our melody without really thinking about the exact number too much.
+
+```java
+set scale minor d
+
+list melody [3 3 3 10 2 2 2 9 0 0 0 6 4 0 0 5]
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400) slide(100)
+```
+
+To finish we can adjust the synth sound more by creating a so called `super()` synth. This is a synth that plays multiple synths (voices) at the same time in unison with a little detuning creating an interesting effect. For example try:
+
+```java
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400) slide(100) super(0.12 3)
+```
+
+This means 3 voices with a small detuning of 0.12. But instead of `(0.12 3)` you can also try other values like `(0.32 5)`. The final result should look something like this:
+
+```java
+set tempo 80  
+set scale minor d
+
+list hatBeat [1 0.05 1 0.2]
+new sample hat_808 time(1/32) play(hatBeat 1) gain(0.7)
+
+list kickBeat [1 0 0 0.7 0 0.9 0 0.2]
+new sample kick_808 time(1/8) gain(1) play(kickBeat 1)
+new sample snare_808 time(1/2 1/4) speed(1.4)
+new sample maracas_808 time(1/2 15/16)
+
+set scale minor d
+
+list progression [0 2]
+list bassNotes repeat(progression 16)
+new synth saw note(bassNotes 0) name(bass) time(1/8) shape(1 100) fx(filter low 500)
+
+list melody [3 3 3 10 2 2 2 9 0 0 0 6 4 0 0 5]
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400) slide(100) super(0.12 3)
+```
 
 ## 3. More Rhythms, Lists & Effects
 
