@@ -164,8 +164,85 @@ new synth saw note(melody 1) time(1/4 1/8) fx(filter low 2000) shape(10 250 10) 
 
 ## 3. More Rhythms, Lists & Effects
 
-Coming soon...
+### List methods
+
+So now that we've made both rhythmical and melodical instruments we can start to work with algorithmic processes (or methods/functions) to let the computer aid us in generating lists that we can use to manipulate parameters in the instruments.
+
+We can start by generating a rhythm for the bass synthesizer without having to type all the numbers ourselves. For instance we can use the `euclid()` method that allows us to generate euclidean rhythms. This is a rhythm where a `x`-amount of hits is evenly distributed over a `y`-amount of steps.
+
+```java
+list bassRhythm euclid(8 3)
+```
+
+At any point you can always see what the output is from a list by using `print` or `view`. `print` will output the result of the list in the console below the texteditor. `view` will give you a visual representation of the values as grayscale colors behind the code editor. This can be useful for longer lists to get an overall idea of what the list looks like at a quick glance.
+
+```java
+list melody euclid(8 3)
+print melody
+view melody
+```
+
+We can now extend the rhythm by for example creating a copy of itself and reserving it. Then appending the result to the original list. This creates a so called palindrome and therefore the function is called `palin()`.
+
+```java
+list bassRhythm palin(euclid(8 3))
+```
+
+Now that we know we have 6 hits in the rhythm for the bass we can create a new bassline that uses the progression as a startingpoint, but uses other notes to create a relative offset (for example alternating between root and octave). The `clone()` method can take any list as an input and make multiple copies of the list and append it. The intersting thing is that clone can also add a value to the copied list so it can offset all the values. We will use `duplicate()` to append 2 identitical copies to the `[0 12]` list.
+
+```java
+list bassRhythm palin(euclid(8 3))
+list bassNotes duplicate([0 12] 3)
+list bassNotes clone(bassNotes progression)
+print bassNotes
+```
+
+This will result in a list that looks like this: `[0 12 0 12 0 12 7 19 7 19 7 19 3 15 3 15 3 15 10 22 10 22 10 22]`
+
+### FX
+
+We have already seen that we can adjust the color of the synths by using the `filter`. The filter is one effect that we can use with the `fx()` function. But we can make the sound more interesting and alive by adding various other effects such as reverb (room emulation), delay and saturation (distortion/overdrive). You can apply values to the functions by taste and you can even modulate the parameters of these effects with a (generated) list.
+
+For example we can add a `reverb` to the lead synthesizer to give it the effect of being in a room/hall. We give the arguments `0.5` and `3`. The `0.5` will mix half of the original sound and half of the reverberation sound. The `3` is the reverb time in seconds.
+
+```java
+new synth saw note(melody 2) time(1/8) fx(filter low 2000) shape(1 400) slide(100) super(0.12 3) fx(reverb 0.5 3)
+```
+
+We can also add a distortion (`drive`) to the bass synthesizer like so.
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(1 500) fx(filter low 800) play(bassRhythm 4) fx(drive 2)
+```
+
+If we remove the `shape()` from the bass by adding a value of `-1` to the shape function it will continuously play the sound of the synth. We can then use a Low Frequency Oscillator (`lfo`) effect to let the amplitude be modulated in different timing intervals by a different type of waveform like a `sine`.
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(-1) fx(filter low 800) play(bassRhythm 4) fx(drive 2) fx(lfo 3/16 square)
+```
 
 ## 4. Final Result
 
-Coming soon...
+When you are done your code may look something like this. But of course it is completely fine if it is something completely different as well!
+
+```java
+set tempo 125
+
+list hatBeat [1 0.9 1 0.3]
+new sample hat_909 time(1/16) play(hatBeat 1) speed(0.4) shape(1 50) gain(0.5)
+new sample kick_vintage time(1/2) play(0.85)
+new sample snare_ac time(1/2 1/4)
+new sample clap_909 time(7/16) play(0.7)
+set all fx(reverb 0.3 1.2)
+
+set scale minor e
+
+list bassRhythm palin(euclid(8 3))
+list progression [0 7 3 10]
+list bassNotes duplicate([0 12] 3)
+list bassNotes clone(bassNotes progression)
+new synth saw note(bassNotes 0) time(1/16) shape(-1) fx(filter low 800) play(bassRhythm 4) fx(drive 2) fx(lfo 3/16 square)
+
+list melody repeat(progression 4)
+new synth saw note(melody 1) time(1/4 1/8) fx(filter low 2000) shape(10 250 10) slide(50) super(0.032 3) fx(reverb 0.4 3)
+```

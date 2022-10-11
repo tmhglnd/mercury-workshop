@@ -155,4 +155,23 @@ Coming soon...
 
 ## 4. Final Result
 
-Coming soon...
+```java
+set tempo 140
+set scale minor c
+
+new sample kick_909 time(1/4) play(0.9) fx(squash 1.1)
+list hats choose(4 [hat_909 hat_909_open])
+new sample hats time(1/4 1/8) gain(0.5)
+new sample snare_909 time(1/2 1/4) speed(0.7)
+
+list slices choose(16 spreadF(16))
+new loop amen time(1/16) fx(filter high 300 0.4) start(slices) gain(0.6)
+
+list bassRhythm palin(euclid(8 3))
+list highNotes spread(5 12 36)
+list bassLine spray(highNotes bassRhythm)
+list cutoffs shuffle(mtof(spread(32 60 108)))
+
+new synth saw note(bassLine) time(1/16) super(0.213 3) name(bass)
+    set bass fx(filter low cutoffs 0.6) fx(reverb 0.2 2)
+```
