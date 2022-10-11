@@ -151,27 +151,76 @@ new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs) 
 
 ## 3. More Rhythms, Lists & Effects
 
-Coming soon...
+So now that we've made both rhythmical and melodical instruments we can start to work with algorithmic processes (or methods/functions) to let the computer aid us in generating lists that we can use to manipulate parameters in the instruments.
+
+We can start by generating a list of higher notes for the bass synthesizer to play. For that we can use the `spread()` function. The spread method generates a list of `n`-amount of items and spreads the list from the starting to ending value. For example `spread(5 12 36)` will create a list of `5` items, starting at `12` and ending at `36`.
+
+```java
+list highNotes spread(6 12 36)
+```
+
+At any point you can always see what the output is from a list by using `print` or `view`. `print` will output the result of the list in the console below the texteditor. `view` will give you a visual representation of the values as grayscale colors behind the code editor. This can be useful for longer lists to get an overall idea of what the list looks like at a quick glance.
+
+```java
+list melody spread(6 12 36)
+print melody
+view melody
+```
+
+We now want to create a list that can be used as a rhythm that holds exactly the same amount of `1`'s as there are high notes (so 6). So for that we can for example generate a euclidean rhythm with `euclid()`. This is a rhythm where a `x`-amount of hits is evenly distributed over a `y`-amount of steps. We can then extend the rhythm by appending a reversed version of itself (a so called palindrome) by using the `palin()` method.
+
+```java
+list bassRhythm palin(euclid(8 3))
+```
+
+Now that we know we have 6 hits in the rhythm we can replace all the `1`'s in the rhythm with a note from the list `highNotes`. We can do that by using the `spray()` function. This function "sprays" a list of values over a rhythmical list of 1's and 0's, replacing the 1's with the value from the input list.
+
+```java
+list highNotes spread(6 12 36)
+list bassRhythm palin(euclid(8 3))
+list bassNotes spray(highNotes bassRhythm)
+print bassNotes
+```
+
+This will result in a list that looks like this: `[12 0 0 16 0 0 21 0 0 26 0 0 31 0 0 12]`
+
+### FX
+
+We have already seen that we can adjust the color of the synths by using the `filter`. The filter is one effect that we can use with the `fx()` function. But we can make the sound more interesting and alive by adding various other effects such as reverb (room emulation), delay and saturation (distortion/overdrive). You can apply values to the functions by taste and you can even modulate the parameters of these effects with a (generated) list.
+
+For example we can add a `reverb` to the synthesizer to give it the effect of being in a room/hall. We give the arguments `0.5` and `3`. The `0.5` will mix half of the original sound and half of the reverberation sound. The `3` is the reverb time in seconds.
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs) super(0.213 3) fx(reverb 0.5 3)
+```
+
+We can also add a distortion (`drive`) to the bass synthesizer like so.
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(1 80 1) fx(filter low cutoffs) super(0.213 3) fx(reverb 0.5 3) fx(drive 15)
+```
+
+If we remove the `shape()` from the bass by adding a value of `-1` to the shape function it will continuously play the sound of the synth. We can then use a Low Frequency Oscillator (`lfo`) effect to let the amplitude be modulated in a specific timing interval by a different type of waveform like a `square`.
+
+```java
+new synth saw note(bassNotes 0) time(1/16) shape(-1) fx(filter low cutoffs) super(0.213 3) fx(reverb 0.5 3) fx(lfo 1/16)
+```
 
 ## 4. Final Result
 
 ```java
 set tempo 140
-set scale minor c
 
-new sample kick_909 time(1/4) play(0.9) fx(squash 1.1)
-list hats choose(4 [hat_909 hat_909_open])
+list hats [hat_909 hat_909_open]
 new sample hats time(1/4 1/8) gain(0.5)
-new sample snare_909 time(1/2 1/4) speed(0.7)
+new sample kick_909 time(1/4) play(0.9)
+new sample snare_909 time(1/2 1/4) speed(0.7) shape(1 100)
 
-list slices choose(16 spreadF(16))
-new loop amen time(1/16) fx(filter high 300 0.4) start(slices) gain(0.6)
+new loop amen time(1) gain(0.6)
 
-list bassRhythm palin(euclid(8 3))
 list highNotes spread(5 12 36)
-list bassLine spray(highNotes bassRhythm)
-list cutoffs shuffle(mtof(spread(32 60 108)))
-
-new synth saw note(bassLine) time(1/16) super(0.213 3) name(bass)
-    set bass fx(filter low cutoffs 0.6) fx(reverb 0.2 2)
+list bassRhythm palin(euclid(8 3))
+list bassNotes spray(highNotes bassRhythm)
+list cutoffs [300 700 1500]
+new synth saw note(bassNotes 0) time(1/16) shape(-1) fx(filter low cutoffs) super(0.213 3) fx(reverb 0.5 3) fx(drive 15) fx(lfo 1/16)
 ```
