@@ -15,6 +15,10 @@ A repository with references, cheatsheet, exercises and more helpful references 
 
 - [**Go to the Mercury Playground**](http://mercury.timohoogland.com)
 
+## 👩‍💻🧑‍💻 Code together
+
+- [**Go to Flok**](https://next.flok.cc)
+
 ## ⚡️ Interesting links
 
 - [Netherlands Coding Live Community](https://netherlands-coding-live.github.io/)
@@ -37,7 +41,7 @@ A repository with references, cheatsheet, exercises and more helpful references 
 - Laptop (Windows 10, MacOS 10.12+, Linux)
 	- 4GB Ram and Intel i5 processor or higher recommended
 	- Decent wifi connection
-	- Google Chrome (or chromium browser)
+	- Chromium browser (eg. Brave, Arc, Google Chrome)
 - Headphones (wired) & microphone
 
 ### 🕹 Useful software (not required)
