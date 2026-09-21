@@ -4,6 +4,7 @@ headerincludes:
 	- \setmainfont{Arial}
 	- \usepackage[english]{babel}
 title: Hacking Electronic Music
+subtitle: Live coding in the browser with Mercury
 author: Timo Hoogland
 mail: info@timohoogland.com
 fontsize: 11pt
@@ -18,7 +19,7 @@ documentclass: article
 linestretch: 1.1
 ...
 
-![](./media/livecoding-mercury.png){ width=100% }
+![](./media/livecoding-mercury-2.jpeg){ width=100% }
 
 # General info
 
@@ -166,3 +167,6 @@ Timo is a digital artist, live coder, drummer and music technology educator from
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://www.stimuleringsfonds.nl/en)
 - Mercury is sponsored by [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
 
+# Credits
+
+- Photo by [Indiara de Benedetto](https://www.indiaradibenedetto.com/wp/)
