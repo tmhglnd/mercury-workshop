@@ -24,15 +24,15 @@ linestretch: 1.1
 
 **lengte**: +/- 3 uur (langer of korter mogelijk)
 
-**deelnemers**: Max. 20 people (voorkeur < 15)
+**deelnemers**: Maximaal 15
 
 **leeftijd**: 16+
 
-**skills**: geen programmeer of muzikale kennis nodig
+**skills**: geen programmeer- of muzikale kennis nodig
 
-**computer**: Eigen laptop (met Google Chrome) en koptelefoon
+**computer**: Eigen laptop (met Google Chrome) en koptelefoon per deelnemer
 
-**taal**: Nederlands (spreken, ook mogelijk in het Engels), Engels (schrijven)
+**taal**: Nederlands (spreken, ook mogelijk in het Engels), Engels (schrijven van de code en lezen documentatie en tutorials)
 
 **system vereisten**: 
 
@@ -43,13 +43,13 @@ linestretch: 1.1
 
 # Workshop beschrijving
 
-In de toekomst wordt muziek misschien wel door Artificial Intelligence gemaakt. Maar tot dat zover is kan jij al wel met code en algoritmes elektronische muziek programmeren!
+<!-- In de toekomst wordt muziek misschien alleen nog maar door Artificial Intelligence gemaakt... Maar tot dat zover is kan jij al wel met code en algoritmes elektronische muziek programmeren en componeren! -->
 
-In deze cursus leer je om elektronische muziek te maken met computercode en algoritmes! Hiervoor gebruik je de programmeeromgeving "Mercury". Jij programmeert de instructies en de computer vertaald dat naar beats, synths, catchy melodiën en meer. Je kan de code aanpassen terwijl je muziek afspeelt en gelijk het resultaat horen. Welkom in de wereld van Live Coding! Aan het eind van de workshop ben je in aanraking gekomen met technologie en technieken die gebruikt worden in moderne muziek zoals sampling, synthesis en sound design en heb je ervaren hoe het is om algoritmes te gebruiken voor componeren van muziek.
+In deze workshop leer je om zelf elektronische muziek te maken met computercode en algoritmes! Hiervoor gebruik je de programmeeromgeving "Mercury". Jij programmeert de instructies en de computer vertaalt dat naar beats, synths, catchy melodiën en meer. Je kan de code aanpassen terwijl de muziek speelt en gelijk het resultaat van je veranderingen horen. Welkom in de wereld van *Live Coding*! Aan het eind van de workshop ben je in aanraking gekomen met technologie en technieken die gebruikt worden in de productie van moderne elektronische muziek, zoals *sampling*, *synthesis* en *sound design* en heb je ervaren hoe het is om *algoritmes* te gebruiken voor het maken van muziek.
 
 ## Over Timo
 
-Ik ben live coder, muziektechnoloog en digitaal kunstenaar. Ik geef les in programmeren en ontwerpen van geluid, muziek en audiovisuele kunst aan de Hogeschool voor de Kunsten Utrecht (HKU). Ik treed veel op als live coder, ook in combinatie met drums. Hierbij programmeer ik elektronische muziek, veelal een mix tussen Acid, Industrial Techno, Psytrance en IDM. Daarnaast programmeer ik ook (audio)visueel werk voor installaties. Je kunt meer van mijn werk vinden op www.timohoogland.com of @tmhglnd op instagram.
+Ik ben live coder, muziektechnoloog en digitaal kunstenaar. Ik geef les in programmeren en ontwerpen van geluid, muziek en audiovisuele kunst aan de Hogeschool voor de Kunsten Utrecht (HKU). Ik treed veel op als live coder, ook in combinatie met drummen. Hierbij programmeer ik elektronische muziek, veelal een mix tussen Acid, Industrial Techno, Psytrance en IDM. Daarnaast programmeer ik ook (audio)visueel werk voor installaties. Je kunt meer van mijn werk vinden op www.timohoogland.com of @tmhglnd op instagram, youtube en mastodon
 
 <!-- # Topics -->
 <!-- - What is livecoding? -->
@@ -77,6 +77,8 @@ Ik ben live coder, muziektechnoloog en digitaal kunstenaar. Ik geef les in progr
 - Tafels
 - Stoelen
 - Voldoende stekkerblokken op tafel
+- Een laptop voor elke deelnemer of eventueel in duo's
+- Koptelefoons voor elke deelnemer of met koptelefoon-splitter bij duo's
 
 **Consumpties**:
 

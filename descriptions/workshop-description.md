@@ -39,19 +39,36 @@ linestretch: 1.1
 - Mac 10.11+ / Windows 10 / Linux: 
 	- Intel Core i5 processor (or faster recommended)
 	- 4 GB RAM (8 GB or more recommended)
-	- Chromium based browser (Brave, Arc, Google)
+	- Firefox or Chromium browser (Firefox, LibreWolf, Brave, Arc)
 
-**website**:
+**websites**:
 
-- [mercury.timohoogland.com](https://mercury-playground.pages.dev/)
+- [https://timohoogland.com](https://timohoogland.com)
+- [https://mercury-playground.cc](https://mercury-playground.cc)
 
 # Workshop description
 
-Join this crash-course into the exciting world of live coding music. No previous knowledge of programming required, only a desire to express yourself creatively! During this workshop you will learn to create electronic music with computercode and algorithms! For this we use the programming language Mercury. You will program the instructions and the computer will translate that to beats. You can adjust the code in real time while the music is playing and hear it change. Welcome to the world of Live Coding! At the end of the workshop you have been introduced to technologies used in electronic music production and you will have experienced what it means to use algorithms to compose music and sound.
+Join this crash-course into the world of live coding electronic music. No previous knowledge of programming is required, only an interest to express yourself musically! During this workshop you will learn to create electronic music with computercode and algorithms. For this we use the programming environment Mercury. You will program instructions, and the computer will translate those to beats, synthesizers and other crazy sounds. You can adjust the code while the music is playing, and hear the sound change. This is the beginning of live coding! At the end of the workshop you have been introduced to technologies used in electronic music production and you will have experienced what it means to use algorithms to compose music and sound. We'll also look briefly at the larger live coding scene and what other things you could explore in the future.
 
 # In-depth description of Mercury
 
-Mercury is a minimal and human-readable language that focusses on quick expression in composing, performing and communicating live coded music. Mercury is a great environment to get introduced to the amazing worlds of live coding, creative coding, algorithmic composition, electronic music and of course the Algorave scene! In Mercury, all elements of the language are designed around making code more accessible and less obfuscating for the performer and the audience. This motivation stretches down to the coding style itself which uses clear descriptive names for functions and a clear syntax. Furthermore the environment runs in the browser so it is available to you at all times. Mercury provides the artist-programmer with an extensive library of algorithms to generate sequences, sounds and music.
+Mercury is a human-made, beginner-friendly and human-readable language that focusses on quick expression of code for composing, performing and communicating live music. Mercury is a good environment to get introduced to the worlds of live coding, creative coding, algorithmic composition, electronic music and of course the Algorave scene! In Mercury, all elements of the language are designed around making code more accessible and less obfuscating for you (the performer), but also the audience. This motivation stretches down to the coding style itself which uses clear descriptive names for functions and a clear syntax. Furthermore the environment runs in the browser so it is available to you at all times. Mercury attempts to provide the artist-programmer with an extensive library of algorithms to generate sounds, sequences and music.
+
+# Biography
+
+Timo is a digital artist, live coder, drummer and music technology educator from the Netherlands. He livecodes electronic music and develops algorithmic audiovisual compositions and installations. Timo graduated from the Masters of Music at the HKU University of the Arts Utrecht in 2019, where he developed the livecoding tool Mercury. He organizes meetups, workshops and algoraves as part of Netherlands Coding Live. He teaches creative coding at HKU Music Technology and Conservatory of Amsterdam.
+
+# Socials
+
+- https://www.timohoogland.com
+- https://www.instagram.com/tmhglnd
+- https://social.toplap.org/@tmhglnd
+- https://www.youtube.com/tmhglnd
+- https://timohoogland.bandcamp.com/
+
+# Hashtags
+
+#electronicmusic #algorithmicmusic #creativecoding #livecoding #algorithmiccomposition #sounddesign #digitalart #digitalculture #diyprogramming #algorave #performanceart
 
 <!-- # Topics -->
 <!-- - What is livecoding? -->
@@ -148,3 +165,4 @@ Mercury is a minimal and human-readable language that focusses on quick expressi
 
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://www.stimuleringsfonds.nl/en)
 - Mercury is sponsored by [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
+
