@@ -13,40 +13,42 @@ A repository with references, cheatsheet, exercises and more helpful references 
 
 ## 📟 Live Coding Platform
 
-- [**Go to the Mercury Playground**](http://mercury.timohoogland.com)
+- [**Go to the https://mercury-playground.cc**](https://mercury-playground.cc)
 
 ## 👩‍💻🧑‍💻 Code together
 
-- [**Go to Flok**](https://next.flok.cc)
+- [**Go to Flok**](https://flok.cc)
 
 ## ⚡️ Interesting links
 
 - [Netherlands Coding Live Community](https://netherlands-coding-live.github.io/)
 - [TOPLAP Live Coding Forum](https://forum.toplap.org/c/communities/nl/18)
+- [Netherlands Coding Live Mastodon](https://social.toplap.org/@nl_cl)
 - [Mercury Discord Server](https://discord.gg/vt59NYU)
 - [Creative Coding Utrecht](https://www.creativecodingutrecht.nl)
 
 ## 📖 Documentation
 
 <!-- - [Mercury Tutorial](https://tmhglnd.github.io/mercury/tutorial.html) -->
-- [Mercury Documentation](https://tmhglnd.github.io/mercury/reference.html)
-- [Sounds in Mercury](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md#sounds-in-mercury)
+- [Mercury Documentation](https://tmhglnd.github.io/mercury/docs/reference)
+- [List of all sounds in Mercury](https://tmhglnd.github.io/mercury/docs/usage/sounds)
+- [Add Mercury to your own Website](https://tmhglnd.github.io/mercury/docs/usage/embedding)
 
 ## 👋 About me
 
-- [Timo Hoogland](http://www.timohoogland.com)
+- [www.timohoogland.com](http://www.timohoogland.com)
 
 ## 💻 Computer Requirements
 
 - Laptop (Windows 10, MacOS 10.12+, Linux)
 	- 4GB Ram and Intel i5 processor or higher recommended
 	- Decent wifi connection
-	- Chromium browser (eg. Brave, Arc, Google Chrome)
-- Headphones (wired) & microphone
+	- Chromium/Firefox based browser (eg. Brave, Arc, Librewolf, Watefox)
+- Headphones (wired) & optional microphone
 
 ### 🕹 Useful software (not required)
 
-1. [**Sublime**](https://www.sublimetext.com/)
+1. [**Pulsar**](https://pulsar-edit.dev/)
 	- multi-purpose text editor
 2. [**Discord**](https://discord.com/new)
 	- join the mercury discord server
@@ -64,7 +66,7 @@ Some useful software for livestreaming or recording of sound and screen:
 3. [**VB-Cables**](https://www.vb-audio.com/Cable/) for Windows
   	- This software allows you to route sound internally from one application to another, for example if you want to share your sound over Discord, or Jitsi, Zoom, Skype, you name it.
 
-### 👾 Other
+### 👾 Other tools
 
 Some other useful software for sharing images/visuals/webcam as virtual devices between platforms like OBS, Zoom, Jitsi, Skype on your computer.
 
