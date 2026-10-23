@@ -11,6 +11,14 @@ A repository with references, cheatsheet, exercises and more helpful references 
 	- [Hip-Hop](./exercises/style-hiphop.md)
 	- [Techno](./exercises/style-techno.md)
 
+- [**More Examples**](https://github.com/tmhglnd/mercury-examples/tree/main/data/examples)
+	- *Also included in the playground when clicking on "Example"*
+
+- [**All Tutorials**](https://github.com/tmhglnd/mercury-examples/tree/main/data/tutorials)
+	- *Also included in the playground when clicking on "Tutorials*"
+
+- [**Tutorials on Youtube**](https://www.youtube.com/watch?v=J2tQ7Ku-C-M&list=PLxLPN4JkS2hkMxulEnSehzNO-K4wh41Y3)
+
 ## 📟 Live Coding Platform
 
 - [**Go to the https://mercury-playground.cc**](https://mercury-playground.cc)
